@@ -9,7 +9,7 @@ mutex_wait.c
 sem_wait.c         
 : Example of using semaphore to protect critical section between two pthread.  
 
-sem_wait_process.c 
+sem_wait_process.c         
 : Example of using semaphore to protect critical section between two Process.   
 
 Seldom use mutex to protect C.S between process.
