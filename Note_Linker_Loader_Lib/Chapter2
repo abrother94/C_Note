@@ -1,0 +1,35 @@
+#####################################################################################
+#2. Compile procedure.
+#
+#   2.1 Preprocessing.
+#
+#      - To produce pre-compile file and can see the macro expantion.
+#
+#        Example : 
+        gcc -E ../fun_p_a.c -o fun_p_a.i
+#
+#   2.2 Compilation. 
+#
+#      - To produce assembly code.
+#        Example : 
+        gcc -S ../fun_p_a.c -o fun_p_a.s
+
+#   2.3 Assembly.
+#
+#      - To produce obj(machine code) code from assembly code.
+#
+#        Example : 
+         as ../fun_p_a.s -o fun_p_a.o
+
+#        or
+
+#        Example : 
+        gcc -c ../fun_p_a.s -o fun_p_a.o
+#
+#   2.4 linking.
+#      
+#      - To Address and Storage Allocatino.
+#      - To Symbol Resolution(Name Resolution, Address Binding  or symbol Binding).
+#      - To Relocation.
+
+
