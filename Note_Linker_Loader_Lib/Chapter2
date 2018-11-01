@@ -36,7 +36,7 @@
 #      - To Relocation.
 #           Global variable, function has its own address in individual obj file , but
 #           these address will be used by other obj or module, we need re-allocate it 
-#           when linnking stage. And this address will be final address while running in
+#           when linnking stage. And this address will be final address ( virtual address space) while running in
 #           Memory.
 #           
 #        Exmaple
@@ -53,7 +53,8 @@
 #        400535:       c3                      retq
 #
 #        0000000000400536 <main>:
-#                     ~~~~~~~~~~~~~~~~
+#                  ~~~~~~~~~~~~~~~~  virtual address space
+#
 #        400536:       55                      push   %rbp
 #        400537:       48 89 e5                mov    %rsp,%rbp
 #       /////////////////////////////////////////////////////////////////////////////////
@@ -71,7 +72,7 @@
 #        cs             0x33     51
 #        ss             0x2b     43
 #
-#        NOTE: "rip" which is to point to the next instruction to be fetched by BIU unit to be feed into EU unit.
+#        NOTE: "rip" which is to point to the next instruction  virtual address to be fetched by BIU unit to be feed into EU unit.
 #
 
 
