@@ -17,6 +17,7 @@
 #   2.3 Assembly.
 #
 #      - To produce obj(machine code) code from assembly code.
+#        Code address start from 0x00000000 as a reference address.
 #
 #        Example : 
          as ../fun_p_a.s -o fun_p_a.o
@@ -29,7 +30,48 @@
 #   2.4 linking.
 #      
 #      - To Address and Storage Allocatino.
+#
 #      - To Symbol Resolution(Name Resolution, Address Binding  or symbol Binding).
+#
 #      - To Relocation.
+#           Global variable, function has its own address in individual obj file , but
+#           these address will be used by other obj or module, we need re-allocate it 
+#           when linnking stage. And this address will be final address while running in
+#           Memory.
+#           
+#        Exmaple
+#
+#        cat fun_p_a.objdump
+#        ...
+#        ...
+#        0000000000400526 <fun_acc_5916>:
+#        400526:       55                      push   %rbp
+#        400527:       48 89 e5                mov    %rsp,%rbp
+#        40052a:       bf 00 06 40 00          mov    $0x400600,%edi
+#        40052f:       e8 ac fe ff ff          callq  4003e0 <puts@plt>
+#        400534:       5d                      pop    %rbp
+#        400535:       c3                      retq
+#
+#        0000000000400536 <main>:
+#                     ~~~~~~~~~~~~~~~~
+#        400536:       55                      push   %rbp
+#        400537:       48 89 e5                mov    %rsp,%rbp
+#       /////////////////////////////////////////////////////////////////////////////////
+#        Use gdb to check running procss and stop in main()
+#        Breakpoint 1, main () at fun_p_a.c:32
+#        32          funcNum_ptr[0]();
+#        (gdb) info all-registers
+#        ...
+#        ...
+#        r14            0x0      0
+#        r15            0x0      0
+#        rip            0x40053a 0x40053a <main+4>
+#        ~~~                     ~~~~~~~~~~~~~~~~~
+#        eflags         0x246    [ PF ZF IF ]
+#        cs             0x33     51
+#        ss             0x2b     43
+#
+#        NOTE: "rip" which is to point to the next instruction to be fetched by BIU unit to be feed into EU unit.
+#
 
 
