@@ -3,12 +3,13 @@ static int s_igv = 1;
 static int s_igvz = 0;
 static int s_ignv;
 
-void test(int b)
+int test(int b)
 {
     int a = 0;
-    printf("a[%d]", a);
-    printf("b[%d]", b);
-    printf("7788");
+    printf("a[%d]\r\n", a);
+    printf("b[%d]\r\n", b);
+    printf("7788\r\n");
+    return 2;
 }
 
 int main()
@@ -21,7 +22,5 @@ int main()
     int lvz = 0;
     int lnv;
 
-    test(lv);
-
-    return 1;
+    return test(lv);
 }
