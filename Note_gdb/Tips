@@ -35,7 +35,6 @@ or
 (gdb) disass  /rm  
       Will show new IP assembly code.
 
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Q 4 : Show content of reg / break point / 
@@ -48,6 +47,28 @@ or
 (gdb) info breakpoint
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q 4-1 : Continue display content of reg 
+
+A 4-1 :
+(gdb) display $rpi 
+(gdb) info display 
+
+   Auto-display expressions now in effect:
+   Num Enb Expression
+   3:   y  $rpi
+   2:   y  $rsp
+   1:   y  $rbp
+
+(gdb) delete display 2
+(gdb) info display
+   Auto-display expressions now in effect:
+   Num Enb Expression
+   3:   y  $rpi
+   1:   y  $rbp
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 Q 5 : Show memory content
 
