@@ -133,6 +133,46 @@ A10  : gdb *.exe
        run arg1 arg2 ....
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q 11 : Run with assembly and source code. 
+
+
+gdb -tui <your-binary>
+(gdb) b main
+(gdb) r
+(gdb) layout split
+
+  lqqbin_example.cqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk
+   x16      {                                                                                                                                                          x
+   x17          static int s_ilv = 2;                                                                                                                                  x
+   x18          static int s_ilvz = 0;                                                                                                                                 x
+   x19          static int s_ilnv;                                                                                                                                     x
+   x20                                                                                                                                                                 x
+B+>x21          int lv = 3;                                                                                                                                            x
+   x22          int lvz = 0;                                                                                                                                           x
+   x23          int lnv;                                                                                                                                               x
+   x24                                                                                                                                                                 x
+   x25          return test(lv);                                                                                                                                       x
+   x26      }                                                                                                                                                          x
+   x27                                                                                                                                                                 x
+   x28                                                                                                                                                                 x
+   lqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk
+   x0x4005b1 <main>                 push   %rbp                                                                                                                        x
+   x0x4005b2 <main+1>               mov    %rsp,%rbp                                                                                                                   x
+   x0x4005b5 <main+4>               sub    $0x10,%rsp                                                                                                                  x
+B+>x0x4005b9 <main+8>               movl   $0x3,-0x8(%rbp)                                                                                                             x
+   x0x4005c0 <main+15>              movl   $0x0,-0x4(%rbp)                                                                                                             x
+   x0x4005c7 <main+22>              mov    -0x8(%rbp),%eax                                                                                                             x
+   x0x4005ca <main+25>              mov    %eax,%edi                                                                                                                   x
+   x0x4005cc <main+27>              callq  0x400566 <test>                                                                                                             x
+   x0x4005d1 <main+32>              leaveq                                                                                                                             x
+   x0x4005d2 <main+33>              retq                                                                                                                               x
+   x0x4005d3                        nopw   %cs:0x0(%rax,%rax,1)                                                                                                        x
+   x0x4005dd                        nopl   (%rax)                                                                                                                      x
+   x0x4005e0 <__libc_csu_init>      push   %r15                                                                                                                        x
+   mqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj
+
 
 Ref:
 ftp://ftp.gnu.org/old-gnu/Manuals/gdb/html_chapter/gdb_7.html
