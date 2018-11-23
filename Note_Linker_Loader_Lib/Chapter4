@@ -1,0 +1,19 @@
+4.4.3 ABI (Application Binary Interface) low-level, hardware-dependent format
+
+ How to say 2 ABI are the same ?
+ * The same format of object file.
+ * The same function decoration.
+ * The same layout of variable in memory(Big/Little Endian).
+ * The same call function procedure(Calling convention).
+ * The same stack layout of local variable and parameters.
+ * The same register usage. 
+
+
+4.5 
+ Check what object in static library.
+ * ar -t *.a
+
+ show detail between
+
+ * gcc --verbose .....
+
