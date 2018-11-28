@@ -119,6 +119,22 @@ Num     Type           Disp Enb Address            What
 (gdb) info break
 No breakpoints or watchpoints.
 
+
+Q 8-1 , How to break on memory address 
+
+
+   │0x34000030      mov    r12, #12                                                                                                                         │
+b+ │0x34000034      bl     0x340000b8                                                                                                                       │
+   │0x34000038      bl     0x340000c4                                                                                                                       │
+   │0x3400003c      b      0x3400004c                                                                                                                       │
+   │0x34000040      mrseq  r0, (UNDEF: 0
+
+A 8-1
+
+(gdb) break *0x34000034
+Breakpoint 1 at 0x34000034
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Q 9 : Show local variables value
