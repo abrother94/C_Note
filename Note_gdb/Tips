@@ -176,6 +176,23 @@ B+>x0x4005b9 <main+8>               movl   $0x3,-0x8(%rbp)                      
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q 12 : How to run QEMU remote debug
+
+A : Take QEMU_FLASH as example 
+
+./qemu-system-arm-2.6.0-flash -M versatilepb  -m 256 -nographic -pflash ./flash.img -s -S
+
+open another consoe
+
+gdb-multiarch nboot.elf
+
+(gdb) target remote:1234
+Remote debugging using :1234
+0x34000000 in ?? ()
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 * You can put this to stop at code and ctrl + c  see the register value
 b       .
 
