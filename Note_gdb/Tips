@@ -242,6 +242,21 @@ b .
 
 * ctrl + c quit and show final register value.
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+How to get funtion line from bin file .
+
+example:
+
+$ gcc -Wl,-Map=test.map -g -o test test.c
+$ grep main test.map
+    0x08048258      __libc_start_main@@GLIBC_2.0
+    0x08048258      main
+$ addr2line 0x08048258 -e test -f
+main
+/home/mtj/test/test.c:4
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Ref:
 ftp://ftp.gnu.org/old-gnu/Manuals/gdb/html_chapter/gdb_7.html
 https://blogs.oracle.com/linux/8-gdb-tricks-you-should-know-v2
