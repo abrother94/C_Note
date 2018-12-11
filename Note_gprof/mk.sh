@@ -4,6 +4,7 @@
 # sudo apt-get install python3 graphviz
 # sudo apt-get install python-pip 
 # sudo pip install gprof2dot
+# Program need exit(1) normally (or interrupt by ctrl + z ..etc) then can create gmon.out file 
 
 rm_list=("test" "G" "output.png" "G.png" "gmon.out" "report.txt")
 rm_list_c=${#rm_list[@]}
