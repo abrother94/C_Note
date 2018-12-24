@@ -18,3 +18,9 @@ A6: cat file | sed -n '$='
 
 Q7: Show match pattern line number
 A7: cat file | sed -n '/MATCH_PATTERN/='
+
+Q8: Show only matched pattern content
+A8: cat file | egrep -o "/PATTERN/"
+
+Q9: Replace newline "\n" to " "
+A9: cat file | tr '\n' " "
