@@ -1,2 +1,5 @@
 Q1: Get content from String1 to String2 in FileA
-A1: sed -n '/String1/,/String2/p; /String2/q' "FileA"
+A1: sed -n '/String1/,/String2/p; /String2/q' "$FileA"
+
+Q2: Get content start form lineA to end of file in FileA
+A2: tail -n +$lineA "$FileA"
