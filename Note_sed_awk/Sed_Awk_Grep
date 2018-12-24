@@ -12,3 +12,9 @@ A4: ^[A-Za-z].*[:]
 
 Q5: Match string patten "Start at upper character and end before ":" not include ":"
 Q5: ^[A-Za-z][^:]*
+
+Q6: Show file lines
+A6: cat file | sed -n '$='
+
+Q7: Show match pattern line number
+A7: cat file | sed -n '/MATCH_PATTERN/='
