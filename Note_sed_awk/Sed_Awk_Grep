@@ -1,0 +1,8 @@
+Q1: Get content from String1 to String2 in FileA
+A1: sed -n '/String1/,/String2/p; /String2/q' "$FileA"
+
+Q2: Get content start form lineA to end of file in FileA
+A2: tail -n +$lineA "$FileA"
+
+Q3: Grep multi pal pattern line "(R) or (W) or (R, W) or (W, Set-by-create) or (R, Set-by-create) or (R, W, Set-by-create)"  
+A3: egrep '(\(R\) | \(W\) | \(R, W\) | \(W, Set-by-create\) | \(R, Set-by-create\) | \(R, W, Set-by-create\))'
