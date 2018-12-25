@@ -6,13 +6,18 @@ A2: tail -n +$lineA "$FileA"
 
 Q3: Grep multi pal pattern line "(R) or (W) or (R, W) or (W, Set-by-create) or (R, Set-by-create) or (R, W, Set-by-create)"  
 A3: egrep '(\(R\) | \(W\) | \(R, W\) | \(W, Set-by-create\) | \(R, Set-by-create\) | \(R, W, Set-by-create\))'
-Example:https://www.regextester.com/?fam=106720
+
+Example: https://www.regextester.com/?fam=106720
 
 Q4: Match string patten "Start at upper character and end with ":" include ":"
 A4: ^[A-Za-z].*[:]
 
+Example: https://www.regextester.com/?fam=106721
+
 Q5: Match string patten "Start at upper character and end before ":" not include ":"
 Q5: ^[A-Za-z][^:]*
+
+Exmaple: https://www.regextester.com/?fam=106722 
 
 Q6: Show file lines
 A6: cat file | sed -n '$='
