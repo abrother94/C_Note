@@ -29,4 +29,4 @@ Q8: Show only matched pattern content
 A8: cat file | egrep -o "/PATTERN/"
 
 Q9: Replace newline "\n" to " "
-A9: cat file | tr '\n' " "
+A9: cat file | tr '\n' " ": echo "802.1p" | sed -e 's/^[0-9]/me_&/g'
