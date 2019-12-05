@@ -33,3 +33,9 @@ A9: cat file | tr '\n' " ": echo "802.1p" | sed -e 's/^[0-9]/me_&/g'
 
 Q10: Insert a new line("insert text here") below specific string ("option") ?
 A10: sed '/option/a insert text here' test
+
+Q11: Replace string with variable
+A11: 
+    #Remvoe old KERNELDIR and replace latest one
+    sed -i "s/kernel-.*-lts-x86-64-all/kernel-$K_MAJOR_VERSION.$K_PATCH_LEVEL-lts-x86-64-all/g" $BAL_ONL_KERNEL_FILE
+    sed -i "s/linux-[0-9]*.[0-9]*.[0-9]*/linux-$K_MAJOR_VERSION.$K_PATCH_LEVEL.$K_SUB_LEVEL/g" $BAL_ONL_KERNEL_FILE
