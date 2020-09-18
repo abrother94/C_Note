@@ -19,3 +19,6 @@ gcc -std=gnu++11 -E me_c.cpp  -o me_c.i -I../include -I../open_source/json-cxx/i
 
 * pointer to poinetr
 ![Screenshot](pointer_to_pointer.png) 
+
+* array concept
+https://blog.danielchen.cc/2020/05/30/C-Array-Function-Parameter/?fbclid=IwAR14ouFITGf4lA4rmKlBi5RvMDwCvmdauyiyHS_PlbNcvyQ9c-VQ3BJsg4w
