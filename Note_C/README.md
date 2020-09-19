@@ -25,8 +25,8 @@ https://blog.danielchen.cc/2020/05/30/C-Array-Function-Parameter/?fbclid=IwAR14o
 
 * Pass function pointer as paramenters
 
-#include <stdio.h>
-
+    #include <stdio.h>
+    
     int (* fB)(int (*f)(int aa,int bb), int c);
 
     int A(int a, int b)
