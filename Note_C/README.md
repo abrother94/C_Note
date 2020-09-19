@@ -25,24 +25,24 @@ https://blog.danielchen.cc/2020/05/30/C-Array-Function-Parameter/?fbclid=IwAR14o
 
 * Pass function pointer as paramenters
 
-    #include <stdio.h>
-    
-    int (* fB)(int (*f)(int aa,int bb), int c);
+        #include <stdio.h>
 
-    int A(int a, int b)
-    {
-        return a + b;
-    }
+        int (* fB)(int (*f)(int aa,int bb), int c);
 
-    int fBB(int (* fA)(int a, int b), int cc)
-    {
-        return 1 + cc + fA(3,4);
-    }
+        int A(int a, int b)
+        {
+            return a + b;
+        }
 
-    int  main()
-    {
-        printf("[%d]",fBB(A,1));
-        return 1;
-    }
+        int fBB(int (* fA)(int a, int b), int cc)
+        {
+            return 1 + cc + fA(3,4);
+        }
 
-    #gcc -o a a.c
+        int  main()
+        {
+            printf("[%d]",fBB(A,1));
+            return 1;
+        }
+
+        #gcc -o a a.c
