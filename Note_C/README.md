@@ -21,7 +21,8 @@ gcc -std=gnu++11 -E me_c.cpp  -o me_c.i -I../include -I../open_source/json-cxx/i
 ![Screenshot](pointer_to_pointer.png) 
 
 * array concept
-https://blog.danielchen.cc/2020/05/30/C-Array-Function-Parameter/?fbclid=IwAR14ouFITGf4lA4rmKlBi5RvMDwCvmdauyiyHS_PlbNcvyQ9c-VQ3BJsg4w
+
+        https://blog.danielchen.cc/2020/05/30/C-Array-Function-Parameter/?fbclid=IwAR14ouFITGf4lA4rmKlBi5RvMDwCvmdauyiyHS_PlbNcvyQ9c-VQ3BJsg4w
 
 * Pass function pointer as paramenters
 
@@ -46,3 +47,16 @@ https://blog.danielchen.cc/2020/05/30/C-Array-Function-Parameter/?fbclid=IwAR14o
         }
 
         #gcc -o a a.c
+        
+ * Pointer related
+
+        p++;    // use it then move to next int position
+        ++p;    // move to next int and then use it
+        ++*p;   // increments the value by 1 then use it 
+        ++(*p); // increments the value by 1 then use it
+        ++*(p); // increments the value by 1 then use it
+        *p++;   // use the value of p then moves to next position
+        (*p)++; // use the value of p then increment the value
+        *(p)++; // use the value of p then moves to next position
+        *++p;   // moves to the next int location then use that value
+        *(++p); // moves to next location then use that value
