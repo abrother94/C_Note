@@ -1,5 +1,5 @@
 Q1: Get content from String1 to String2 in FileA
-A1: sed -n '/String1/,/String2/p; /String2/q' "$FileA"
+A1: cat /proc/cmdline | grep loop  | grep -o -P '(?<=String1).*(?=String2)'
 
 Q2: Get content start form lineA to end of file in FileA
 A2: tail -n +$lineA "$FileA"
@@ -39,3 +39,7 @@ A11:
     #Remvoe old KERNELDIR and replace latest one
     sed -i "s/kernel-.*-lts-x86-64-all/kernel-$K_MAJOR_VERSION.$K_PATCH_LEVEL-lts-x86-64-all/g" $BAL_ONL_KERNEL_FILE
     sed -i "s/linux-[0-9]*.[0-9]*.[0-9]*/linux-$K_MAJOR_VERSION.$K_PATCH_LEVEL.$K_SUB_LEVEL/g" $BAL_ONL_KERNEL_FILE
+Q12: remove string in strings
+A12 
+    sonic_version=${SEARCH_SONIC_VERSION_STR#'image_version='} ## Remove 'image_version=' from the string 
+    sonic_version=${sonic_version//\"/} ## Remove " form the string
